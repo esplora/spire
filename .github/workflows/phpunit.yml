@@ -1,0 +1,14 @@
+name: Tests
+
+on: [ push,pull_request ]
+
+jobs:
+  uneditable:
+    uses: esplora/.github/.github/workflows/phpunit-for-laravel.yaml@main
+    with:
+      os: '[ "ubuntu-latest", "windows-latest", "macos-latest" ]'
+      php: '[ "8.2", "8.1", "8.0" ]'
+      laravel: '[ "10.*", "9.*" ]'
+      include: '[{"laravel":"10.*", "testbench": "8.*"}, {"laravel":"9.*", "testbench": "7.*"}]'
+      execute: '[{"laravel":"10.*", "php":"8.0"}]'
+      use-redis: true

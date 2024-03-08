@@ -1,0 +1,41 @@
+{
+    "name": "esplora/spire",
+    "description": "Easy Tools for Laravel SQLite Database",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexandr Chernyaev",
+            "email": "bliz48rus@gmail.com",
+            "homepage": "https://tabuna.github.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-sqlite3": "*",
+        "laravel/framework": "^9.2|^10.0"
+    },
+    "require-dev": {
+        "doctrine/dbal": "^3.1",
+        "phpunit/phpunit": "^9.0|^10.0",
+        "orchestra/testbench-core": "^7.0|^8.0",
+        "laravel/pint": "^1.12"
+    },
+    "autoload": {
+        "psr-4": {
+            "Esplora\\Spire\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Esplora\\Spire\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Esplora\\Spire\\SpireServiceProvider"
+            ]
+        }
+    }
+}
