@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Esplora\Tracker\Tests;
+namespace Esplora\Spire\Tests;
 
 use Esplora\Spire\SpireServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -16,7 +16,21 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
      */
     protected function setUp(): void
     {
+        // Ensure the database file exists
+        touch($this->getDatabasePath());
+
         parent::setUp();
+    }
+
+    /**
+     * Tear down the test environment.
+     */
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+
+        // Remove the database file after the test
+        unlink($this->getDatabasePath());
     }
 
     /**
@@ -27,13 +41,14 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $config = config();
 
         // set up database configuration
-        $config->set('database.connections.spire', [
-            'driver'   => 'sqlite',
-            'database' => ':memory:',
-            'prefix'   => '',
+        $config->set('database.connections.sqlite', [
+            'driver'                  => 'sqlite',
+            'database'                => $this->getDatabasePath(),
+            'prefix'                  => '',
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ]);
 
-        $config->set('database.default', 'spire');
+        $config->set('database.default', 'sqlite');
     }
 
     /**
@@ -46,5 +61,15 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         return [
             SpireServiceProvider::class,
         ];
+    }
+
+    /**
+     * Get the path to the SQLite database file.
+     *
+     * @return string
+     */
+    private function getDatabasePath(): string
+    {
+        return __DIR__.'/database.sqlite';
     }
 }
