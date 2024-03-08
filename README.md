@@ -1,6 +1,6 @@
-#  Spire - Easy Tools for Laravel SQLite Database
+# Spire
 
-Spire is a Laravel package designed to provide easy tools for optimizing SQLite databases. 
+Spire is a Laravel package designed to provide easy tools specifically tailored for optimizing SQLite databases in production environments.
 It offers functionalities such as running VACUUM, enabling WAL journal, and optimizing SQLite databases to enhance performance.
 
 ## Installation
