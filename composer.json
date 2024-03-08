@@ -1,6 +1,6 @@
 {
     "name": "esplora/spire",
-    "description": "Easy Tools for Laravel SQLite Database",
+    "description": "Easy Tools for Production Environment of Laravel SQLite Database",
     "license": "MIT",
     "authors": [
         {
