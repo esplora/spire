@@ -2,8 +2,6 @@
 
 Spire is a Laravel package designed to provide easy tools specifically tailored for optimizing SQLite databases in
 production environments.
-It offers functionalities such as running VACUUM, enabling WAL journal, and optimizing SQLite databases to enhance
-performance.
 
 ## Installation
 
@@ -58,6 +56,7 @@ For efficient database maintenance, it's highly recommended to schedule some of 
 For instance, you can optimize the SQLite database periodically by adding a cron job to your scheduler:
 
 ```php
-// Optimize SQLite database every minute, see https://www.sqlite.org/pragma.html#pragma_optimize
+// Optimize SQLite database every minute,
+// see https://www.sqlite.org/pragma.html#pragma_optimize
 $schedule->command('sqlite:optimize')->everyMinute();
 ```
