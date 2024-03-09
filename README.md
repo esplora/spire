@@ -30,7 +30,7 @@ especially in high-traffic production environments.
 
 #### Optimize Database
 
-To optimize the SQLite database by running VACUUM and PRAGMA optimize:
+To optimize the SQLite database by running PRAGMA optimize:
 
 ```bash
 php artisan sqlite:optimize
