@@ -24,7 +24,7 @@ class Optimize extends Command
      *
      * @var string
      */
-    protected $description = 'Optimize the SQLite database by running VACUUM and PRAGMA optimize.';
+    protected $description = 'Optimize the SQLite database by running PRAGMA optimize.';
 
     /**
      * Execute the console command.
