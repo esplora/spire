@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Esplora\Spire\Tests;
 
-use Esplora\Tracker\Models\Goal;
 use Illuminate\Support\Facades\DB;
 
 class SynchronousTest extends TestCase
