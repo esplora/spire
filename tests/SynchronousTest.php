@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class SynchronousTest extends TestCase
 {
-    public function testItCanSetPragmaSynchronousToNormal()
+    public function test_it_can_set_pragma_synchronous_to_normal()
     {
         // Retrieve the value from the database and ensure it's set to 'normal'
         $result = DB::connection('sqlite')->selectOne('PRAGMA synchronous;');
